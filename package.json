@@ -1,4 +1,6 @@
 {
+  //nomedousuario.github.io/<nomerepo>
+  "homepage":"https://cleisson1992.github.io/bel_cred",
   "name": "belcred-landing",
   "version": "1.0.0",
   "type": "module",
