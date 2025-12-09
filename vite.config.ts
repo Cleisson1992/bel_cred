@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()],
-  base: "/bel_cred/", // MUITO IMPORTANTE para GitHub Pages
+  base: "/bel_cred/", 
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
