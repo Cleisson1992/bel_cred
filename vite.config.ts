@@ -1,7 +1,6 @@
 import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import fs from "node:fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
@@ -9,11 +8,9 @@ import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
-
 export default defineConfig({
-  plugins,
-  base: "/bel_cred/",
+  plugins: [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()],
+  base: "/bel_cred/", // MUITO IMPORTANTE para GitHub Pages
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
@@ -25,9 +22,5 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
-  },
-  server: {
-    port: 3000,
-    host: true,
   },
 });
